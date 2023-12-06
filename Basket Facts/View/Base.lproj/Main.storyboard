@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gey-Ch-kdl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Baller_Insights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1A4-q9-DL5">
+                                <rect key="frame" x="132" y="453" width="137" height="34"/>
+                                <color key="backgroundColor" red="0.39215686274509803" green="0.80000000000000004" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="Pgp-tD-NMI"/>
+                                    <constraint firstAttribute="height" constant="34" id="fcI-mr-78t"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="nQ0-Vy-3EO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="nca-1W-pdM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="V0g-6L-WCK"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baller Insights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jG-7F-H11" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                <rect key="frame" x="79" y="135" width="295" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="pS2-h7-fZI"/>
+                                    <constraint firstAttribute="width" constant="295" id="xug-Bh-8UV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="47"/>
+                                <color key="textColor" name="Title"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="6jG-7F-H11" secondAttribute="bottom" constant="614" id="9Bb-Uv-z2O"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="1A4-q9-DL5" secondAttribute="bottom" constant="375" id="9Ft-Le-vec"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6jG-7F-H11" secondAttribute="trailing" constant="59" id="KbB-du-qwl"/>
+                            <constraint firstItem="6jG-7F-H11" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="43" id="Mxu-9b-QT4"/>
+                            <constraint firstItem="1A4-q9-DL5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="112" id="Tc4-fH-MOp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1A4-q9-DL5" secondAttribute="trailing" constant="112" id="oGP-QJ-Awm"/>
+                            <constraint firstItem="6jG-7F-H11" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="xQS-Ao-wdr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ggp-TW-o6z"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="1A4-q9-DL5" id="kYM-mr-U3v"/>
+                        <outlet property="titleLabel" destination="6jG-7F-H11" id="K7C-ZV-ARe"/>
+                        <segue destination="2sI-92-5EQ" kind="show" identifier="WelcomeToResult" id="2Bp-Qe-Y6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="2.6785714285714284"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="ylR-rw-yei">
+            <objects>
+                <viewController id="2sI-92-5EQ" customClass="ResultViewController" customModule="Baller_Insights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CHv-qM-Zmf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhb-F8-jTl">
+                                <rect key="frame" x="132" y="484" width="149" height="117.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Search"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeBron James" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="2" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRZ-jj-RxG">
+                                <rect key="frame" x="20" y="368" width="374" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="8TC-KX-9eS"/>
+                                    <constraint firstAttribute="height" constant="160" id="iG4-5Q-vBJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="57"/>
+                                <color key="textColor" name="Title"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Ai-SO-YXF"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="pRZ-jj-RxG" firstAttribute="centerY" secondItem="CHv-qM-Zmf" secondAttribute="centerY" id="RRW-aA-Yly"/>
+                            <constraint firstItem="pRZ-jj-RxG" firstAttribute="centerX" secondItem="CHv-qM-Zmf" secondAttribute="centerX" id="dtf-fH-6SL"/>
+                            <constraint firstItem="pRZ-jj-RxG" firstAttribute="centerY" secondItem="CHv-qM-Zmf" secondAttribute="centerY" id="uad-vK-dOE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eiR-Gw-yvU"/>
+                    <connections>
+                        <outlet property="playerNameLabel" destination="pRZ-jj-RxG" id="ii2-Or-B1O"/>
+                        <outlet property="teamNameLabel" destination="Rhb-F8-jTl" id="xQs-Mj-G99"/>
+                        <segue destination="tpd-Uf-b4g" kind="presentation" identifier="ResultToStat" id="ZwU-OD-dgn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lh7-Du-twb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2007.2463768115942" y="3.3482142857142856"/>
+        </scene>
+        <!--Stat View Controller-->
+        <scene sceneID="dTI-r9-Rvj">
+            <objects>
+                <viewController id="tpd-Uf-b4g" customClass="StatViewController" customModule="Baller_Insights" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q6S-7n-KIs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eu0-32-eHK">
+                                <rect key="frame" x="0.0" y="55" width="414" height="831"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <color key="sectionIndexColor" name="Title"/>
+                                <color key="sectionIndexBackgroundColor" name="Background"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Ku-ei-h6z"/>
+                        <color key="backgroundColor" name="Background"/>
+                    </view>
+                    <connections>
+                        <outlet property="StatTableView" destination="eu0-32-eHK" id="AqX-0i-Vxo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p18-sl-YMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005.7971014492755" y="883.92857142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dRq-an-d8N">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gey-Ch-kdl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4B2-Yh-bEn">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s5f-QL-9W0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Dr-ht-Bld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.770992366412212" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="6jG-7F-H11">
+            <size key="intrinsicContentSize" width="283.5" height="57.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.85490196078431369" green="1" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Search">
+            <color red="0.39215686274509803" green="0.80000000000000004" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title">
+            <color red="0.015686274509803921" green="0.21176470588235294" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
